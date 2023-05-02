@@ -15,14 +15,6 @@ if (!file_exists($upload_logfile)) {
 	file_put_contents($upload_logfile, "");
 }
 
-$clean_logfile = "./logs/zoom-cleaner.log.txt";
-if (!file_exists($upload_logfile)) {
-	if (!is_dir("logs")) {
-		mkdir("logs");
-	}
-}
-
-
 if (array_key_exists("server_name", $_GET) && file_exists($file_name = urldecode($_GET["server_name"]))) {
 	$upload_name = urldecode($_GET["upload_name"]);
     $account_id = urldecode($_GET["account_id"]);
